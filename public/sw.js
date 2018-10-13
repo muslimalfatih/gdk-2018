@@ -1,4 +1,3 @@
-// Install SW
 const staticCachesName = 'static-v9'
 const fileToCaches = [
   '/index.html',
@@ -10,13 +9,14 @@ const fileToCaches = [
   '/mapbox/index.html',
   '/mapbox/app.css'
 ]
+
+// Install SW
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(staticCachesName).then((cache) => {
       return cache.addAll(fileToCaches)
     })
   )
-  // console.log('Service Worker Installin', event)
 })
 
 self.addEventListener('activate', () => {
@@ -24,11 +24,7 @@ self.addEventListener('activate', () => {
 })
 
 self.addEventListener('fetch', (event) => {
-
   console.log('Fetching:', event.request.url)
-  // console.log(event.request)
-  // console.log(event.request.method)
-  // console.log(event.request.headers)
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -48,7 +44,5 @@ self.addEventListener('fetch', (event) => {
         console.log(error)
       })
   )
-
-// event.respondWith(response);
 })
 
