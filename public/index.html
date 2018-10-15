@@ -4,9 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Google Developer Kejar">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#2196f3">
 	<title>Mobile Web Specialist</title>
 	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+	<link rel="shortcut icon" href="/images/icons/icon-72x72.png">
+	<link rel="manifest" href="/manifest.json">
 
 	<style>
 		body {
@@ -95,11 +99,11 @@
 
 <body>
 	<div class="container">
-		<div class="menu">
+		<header class="menu">
 			<div class="menu__logo">
 				<img src="./images/logo-MF.png" alt="">
 			</div>
-		</div>
+		</header>
 		<div class="sidebar">
 			<div class="profile-photo">
 				<img src="./images/muslimalfatih-af.jpg" alt="">
@@ -114,26 +118,22 @@
 		<div class="content">
 			<a href="">Kontent 3</a>
 		</div>
-		<div class="footer">Muslim Al Fatih</div>
+		<footer class="footer">Muslim Al Fatih</footer>
 	</div>
 
 	<script>
-		// if(!navigator.serviceWorker) {
-		// 	console.log('Browser not support Service Worker')
-		// } else {
-		// 	navigator.serviceWorker.register('sw.js').then(() => {
-		// 			console.log('Service Worker registered!')
-		// 		}).catch((error) => {
-		// 			console.log('Error: Failed to register Service Worker', error)
-		// 		})()
-		// }
-		(function() {
-			if('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('/sw.js')
-				.then(() => console.log('Service Worker Registered'))
-				.catch((error) => console.log('Registration Failed', error))
+		(function () {
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/sw.js', {
+						scope: './'
+					})
+					.then(() => console.log('Service Worker Registered'))
+					.catch((error) => console.log('Registration Failed', error))
+			} else {
+				console.log('Service worker are not supported.')
 			}
 		})()
+
 	</script>
 </body>
 

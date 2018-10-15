@@ -1,4 +1,4 @@
-const staticCachesName = 'static-v9'
+const staticCachesName = 'static-v10'
 const fileToCaches = [
   '/index.html',
   '/calculator/index.html',
@@ -24,15 +24,12 @@ self.addEventListener('activate', () => {
 })
 
 self.addEventListener('fetch', (event) => {
-  console.log('Fetching:', event.request.url)
   event.respondWith(
     caches.match(event.request)
       .then(response => {
         if(response) {
-          console.log(`Found ${event.request.url} in cache`)
           return response;
         }
-        console.log(`Network request for ${event.request.url}`)
         return fetch(event.request).then(response => {
           return caches.open(staticCachesName).then(cache => {
             cache.put(event.request.url, response.clone());
@@ -45,4 +42,3 @@ self.addEventListener('fetch', (event) => {
       })
   )
 })
-
