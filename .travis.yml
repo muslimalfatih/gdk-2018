@@ -1,9 +1,13 @@
 language: node_js
 node_js:
-  - "7"
+- '7'
 script:
-  - echo 'Deploy!'
-install:
-  - npm install -g firebase-tools
-after_success:
-  - firebase deploy - project muslimalfatih-gdk - token $FIREBASE_TOKEN
+- echo 'Deploy!'
+deploy:
+  provider: firebase
+  token:
+    secure: "FZYp/w6XRiFHvlvudXQbSykogqvXzXJij33liloS1NIpdbahx8Snt+DbSWtCuP5mIS/IkTB63cUB6znaYzSiQ7Nbm1PbJIMXGa1HwQ6SBH261M8EnbmGSg2hNj6+h6Kq2t1XLVQ2G+t1QiJMbYrOrMggh6fWK0vVR5V4DO1OBISOKJ9avNGPdt1vPU0V6u4Zj1dDH2jGuwERjWzJYSrKzAh7xOdRz9/Ccg7jzTH6ZMMxi2qT5WwsJmqdVb4oodh0gbeLhBVOTqfWuH7/qcgS2KJWCLM5J9HoHTDs3mfPziNV3J7OKWe8fL56JUf3l5nKul3yAZgRwCosA/0X7WmUEGLt4GmX76CYmM6NVjnEiu34MlmWod5mu+QlN2WeKi99iusvFWCfGjVBIFBSRRgl/3tGU7UnZIpXGzPUuHUlUYJjLv120jd9M4TRkB0ZtYBBpOHOywBJt3Fe+DLczfsz7mIZ3OeJZo/u2spmbHYNoyR8lgEAIphnsevGg6qdhZoRKRogSrQR0tGJ0Q9uq92P38h/B6VSb55c0Hfs4aB+6sIhm/2jyB6pM0shFWHmSKmIfyYt8WWAU1x/I1g0M7PXZrAywTGGJcoNnA/6iHCzAk+drwyYW0nFLXjSVDEi62xjvi0KZafFbuHf/pnvBAHgQlxN2McqZ8re3mECNF4C7XI="
+  project: muslimalfatih-gdk
+env:
+  global:
+    secure: qbF6FbWYSKe5mQUianMIVVWlWh8GcWXzsZh+utz+tIo3DqfGWqiXols6cnGQDxb5/8aUpdPb4dCxwrX+ifweWqnxhIQMXmCKIABX1OozhCK8/bmvW+LTZV3TC5UO5aHyaa49Og3BGQ9J1zKUsHBKblsWZptC/JuZ9TjP18/lSrq61TE1u3hkw8Mwb62KXOfKMTP/h7heyXJpSsNzkEHyoUlyV8XZfRRZTQjeoN+XsyWLENQ6UzKmoeTyP+S6JQw1xiIJwPaZM8PDOgEZqIx6EDWRXUVsqYGFvlFV75mDzmixyiFssokmhEIX77PL8s45o17Zhxi8A+VlXDR8QqnW6cgAEeeV6zdplBbf94Ql86ZjbwX8tsK8XaCZWJVgdrEn8zl8ZrINxwiH6NJN8J9Ep9cmgJ3T+syn5BqQqclVBksv2xtxll/83WYbB2yRVJfyijAEey3zhjbCXmrpxgonAUgkODaDzYNcI3tDT4IR5O06d7ut5qax5IK2b9AgInDY7KELREkX+jolTOZkpOZUPO3PHbWeIdXuRqUnRinE8Q6qFccXN5V7AFFNtpHfc/3vebOAFLz9EUoZYQC9/Ar51ZnpxLTzMfY0wRrND9rb+b5xjdZXpgu3b7yHOQq2eqDh1+eOc3B3smV/NGJupbfj5PvDISeW2idkS/1kVAS/VQg=
