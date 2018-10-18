@@ -1,4 +1,4 @@
-const staticCachesName = 'static-v10'
+const staticCachesName = 'static-v11'
 const fileToCaches = [
   '/index.html',
   '/calculator/index.html',
